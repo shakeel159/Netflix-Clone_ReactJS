@@ -1,0 +1,40 @@
+
+h1 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  max-width: 90%; /* Limits width */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adds "..." if too long */
+  white-space: nowrap; /* Keeps it on one line */
+}
+h2 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  max-width: 90%; /* Limits width */
+  overflow: hidden;
+  white-space: nowrap; /* Keeps it on one line */
+}
+p {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  max-width: 90%; /* Limits width */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adds "..." if too long */
+  white-space: nowrap; /* Keeps it on one line */
+}
+.App-header img {
+  height: auto; 
+  width: 100%;
+}
+
+.SidebarOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.hamburger-btn {
+  position: absolute;
+  padding-left: 10px;
+  background-color: black;
+  color: white;
+}

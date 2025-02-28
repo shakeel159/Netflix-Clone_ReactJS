@@ -1,0 +1,41 @@
+
+
+.MovieRow {
+    border: 2px solid;
+    width: 100%;
+}
+.Box {
+    border: 2px solid;
+    width: 25%;
+    height: 700px;
+    flex: 0 0 auto;
+}
+.Card img{
+    width:100%;
+    height: auto;
+}
+.colunm {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+/* For screens smaller than 600px (mobile) */
+@media (max-width: 600px) {
+    .Box {
+        width: 60%; /* Box takes up 80% of the container width on mobile */
+        border: 1px solid; /* Maybe reduce border size on mobile */
+        height: auto;
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width: 1000px) {
+    .Box {
+        width: 60%; /* Box takes up 80% of the container width on mobile */
+        border: 1px solid; /* Maybe reduce border size on mobile */
+        height: auto;
+        flex: 0 0 auto;
+    }
+}
