@@ -19,11 +19,24 @@ p {
   text-overflow: ellipsis; /* Adds "..." if too long */
   white-space: nowrap; /* Keeps it on one line */
 }
-.App-header img {
-  height: auto; 
+.App-header {
+  position: relative;
   width: 100%;
+  height: auto; 
 }
 
+.App-header img {
+  height: auto;
+  width: 100%;
+}
+.Banner-Title {
+  width: 100%;
+  height: auto;
+  top: 50%;
+  bottom: 0;
+  position: absolute;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
 .SidebarOverlay {
   position: fixed;
   top: 0;
@@ -37,4 +50,5 @@ p {
   padding-left: 10px;
   background-color: black;
   color: white;
+  z-index: 10;
 }

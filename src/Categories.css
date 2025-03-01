@@ -1,0 +1,30 @@
+#options {
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    color: white;
+    background-color: #f0000065;
+    width: 200px;  /* Adjust width as needed */
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+  #options option {
+    padding: 10px;
+    background-color: #383838;
+    font-size: 16px;
+  }
+
+/* Optional: Style for the label */
+label {
+  font-size: 18px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+#options:hover {
+    border-color: #007bff;
+  }
+  
+  #options:focus {
+    outline: none;  /* Remove default focus outline */
+    border-color: #0056b3;  /* Darker blue when focused */
+  }
