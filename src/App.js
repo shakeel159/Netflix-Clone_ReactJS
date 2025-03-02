@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect  } from "react";
 import { Routes, Route } from "react-router-dom";
 import Banner from './img/DarkNightBanner.jpg';
 import Sidebar from './Sidebar';
@@ -16,11 +16,9 @@ function App() {
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen); 
   };
+
   return (
     <div className="App">
-      <div>
-        <Sidebar toggleSidebar={toggleSidebar}></Sidebar>
-      </div>
       <button className="hamburger-btn" onClick={toggleSidebar} aria-label="Open Sidebar">
         <FaBars size={30} />
       </button>
