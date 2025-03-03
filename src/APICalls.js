@@ -1,3 +1,6 @@
+import axios from 'axios';
+
+
 const API_KEY = 'f98b2e3c7c8d2dad9a49a745702fdef0'; // Use quotes for API key
 const API_URL = 'https://api.themoviedb.org/3';
 
@@ -57,3 +60,37 @@ export const fetchUpcomingMovies = async () => {
       return [];
   }
 };
+
+export const getRandomMovieImage = async () =>  {
+  try {
+      const page = Math.floor(Math.random() * 10) + 1;
+      const popularMovies = await axios.get(`${API_URL}/movie/popular?api_key=${API_KEY}&page=${page}`);
+      
+      const movies = popularMovies.data.results;
+      if (movies.length === 0) return null;
+
+      const randomMovie = movies[Math.floor(Math.random() * movies.length)];
+      const movieId = randomMovie.id;
+
+      // Fetch movie details to get genre info
+      const movieDetails = await axios.get(`${API_URL}/movie/${movieId}?api_key=${API_KEY}`);
+      
+      // Fetch images for the movie
+      const imagesResponse = await axios.get(`${API_URL}/movie/${movieId}/images?api_key=${API_KEY}`);
+      const backdrops = imagesResponse.data.backdrops;
+      
+      if (backdrops.length > 0) {
+          return {
+              title: randomMovie.title,
+              categories: movieDetails.data.genres.map(g => g.name).join(", "),
+              description: randomMovie.overview,
+              imageUrl: `https://image.tmdb.org/t/p/original${backdrops[Math.floor(Math.random() * backdrops.length)].file_path}`
+          };
+      } else {
+          return null;
+      }
+  } catch (error) {
+      console.error("Error fetching random movie image:", error);
+      return null;
+  }
+}

@@ -1,6 +1,5 @@
 import React, { useState, useEffect  } from "react";
 import { Routes, Route } from "react-router-dom";
-import Banner from './img/DarkNightBanner.jpg';
 import Sidebar from './Sidebar';
 import MainPage from './MainPage';
 import FavouritePage from './Fav.js';
@@ -25,14 +24,6 @@ function App() {
 
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
-      <header className="App-header">
-        <img className="banner-img" src={Banner} alt="description of image" />
-        <div className="Banner-Title">
-          <h1>Title</h1>
-          <h2>Caegories</h2>
-          <h2>describtion</h2>
-        </div>
-      </header>
       <div className="MainContent">
         <Routes>
           <Route path="/" element={<MainPage />} />

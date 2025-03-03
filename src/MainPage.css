@@ -40,7 +40,20 @@
     line-height: 1.4;
     max-height: 4.2em; 
 }
-
+/* For small screens (mobile) */
+@media (max-width: 600px) {
+    .Box {
+      width: 80%; /* Make the box take more width on mobile */
+      height: auto;
+    }
+  }
+/* For small screens */
+@media (max-width: 768px) {
+    .column {
+      flex-wrap: wrap;
+      gap: 10px; /* Smaller gap between items */
+    }
+  }
 /* Medium screens (tablets) */
 @media (max-width: 1024px) {
     .description {
@@ -48,13 +61,12 @@
     }
 }
 
-/* Small screens (mobile) */
 @media (max-width: 768px) {
     .description {
-        font-size: 12px;
+      max-height: none; /* Removes the height restriction on small screens */
+      font-size: 14px;
     }
-}
-
+  }
 /* Extra small screens */
 @media (max-width: 480px) {
     .description {
