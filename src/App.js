@@ -27,7 +27,7 @@ function App() {
       <div className="MainContent">
         <Router>
           <Routes>
-            <Route path="/" element={<MainPage />} />
+            <Route path="/" element={<Navigate to="/MainPage" replace />} />
             <Route path="/Favourites" element={<FavouritePage />} />
             <Route path="/Categories" element={<CategoriesPage />} />
             <Route path="/About" element={<AboutPage />} />
