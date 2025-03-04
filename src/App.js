@@ -1,5 +1,5 @@
 import React, { useState, useEffect  } from "react";
-import { BrowserRouter  as Router, Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Sidebar from './Sidebar';
 import MainPage from './MainPage';
 import FavouritePage from './Fav.js';
@@ -25,7 +25,6 @@ function App() {
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
       <div className="MainContent">
-        <Router>
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/Favourites" element={<FavouritePage />} />
@@ -33,7 +32,6 @@ function App() {
             <Route path="/About" element={<AboutPage />} />
             <Route path="/AboutMovie" element={<AboutMoviePage />} />
           </Routes>
-        </Router>
       </div>
     </div>
   );
