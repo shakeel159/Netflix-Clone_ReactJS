@@ -1,5 +1,5 @@
 import React, { useState, useEffect  } from "react";
-import { BrowserRouter  as Router, Routes, Route, Navigate  } from "react-router-dom";
+import { BrowserRouter  as Router, Routes, Route } from "react-router-dom";
 import Sidebar from './Sidebar';
 import MainPage from './MainPage';
 import FavouritePage from './Fav.js';
@@ -27,7 +27,7 @@ function App() {
       <div className="MainContent">
         <Router>
           <Routes>
-            <Route path="/" element={<Navigate to="/MainPage" replace />} />
+            <Route path="/" element={<MainPage />} />
             <Route path="/Favourites" element={<FavouritePage />} />
             <Route path="/Categories" element={<CategoriesPage />} />
             <Route path="/About" element={<AboutPage />} />
