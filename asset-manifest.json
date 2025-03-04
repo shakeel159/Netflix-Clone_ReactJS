@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Netflix-Clone_ReactJS/static/css/main.531ec0d2.css",
-    "main.js": "/Netflix-Clone_ReactJS/static/js/main.defb1605.js",
+    "main.js": "/Netflix-Clone_ReactJS/static/js/main.61ee0f97.js",
     "static/js/453.f0cb673c.chunk.js": "/Netflix-Clone_ReactJS/static/js/453.f0cb673c.chunk.js",
     "static/media/SeverenceTMP.PNG": "/Netflix-Clone_ReactJS/static/media/SeverenceTMP.f54af779d905ebe7f6da.PNG",
     "static/media/DarkNightBanner.jpg": "/Netflix-Clone_ReactJS/static/media/DarkNightBanner.9d19b17b32573eda0701.jpg",
     "index.html": "/Netflix-Clone_ReactJS/index.html",
     "main.531ec0d2.css.map": "/Netflix-Clone_ReactJS/static/css/main.531ec0d2.css.map",
-    "main.defb1605.js.map": "/Netflix-Clone_ReactJS/static/js/main.defb1605.js.map",
+    "main.61ee0f97.js.map": "/Netflix-Clone_ReactJS/static/js/main.61ee0f97.js.map",
     "453.f0cb673c.chunk.js.map": "/Netflix-Clone_ReactJS/static/js/453.f0cb673c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.531ec0d2.css",
-    "static/js/main.defb1605.js"
+    "static/js/main.61ee0f97.js"
   ]
 }
