@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.531ec0d2.css",
-    "main.js": "/static/js/main.74f477ec.js",
+    "main.js": "/static/js/main.bb98b0f1.js",
     "static/js/453.f0cb673c.chunk.js": "/static/js/453.f0cb673c.chunk.js",
     "static/media/SeverenceTMP.PNG": "/static/media/SeverenceTMP.f54af779d905ebe7f6da.PNG",
     "static/media/DarkNightBanner.jpg": "/static/media/DarkNightBanner.9d19b17b32573eda0701.jpg",
     "index.html": "/index.html",
     "main.531ec0d2.css.map": "/static/css/main.531ec0d2.css.map",
-    "main.74f477ec.js.map": "/static/js/main.74f477ec.js.map",
+    "main.bb98b0f1.js.map": "/static/js/main.bb98b0f1.js.map",
     "453.f0cb673c.chunk.js.map": "/static/js/453.f0cb673c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.531ec0d2.css",
-    "static/js/main.74f477ec.js"
+    "static/js/main.bb98b0f1.js"
   ]
 }
