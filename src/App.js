@@ -1,5 +1,5 @@
 import React, { useState, useEffect  } from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter  as Router, Routes, Route } from "react-router-dom";
 import Sidebar from './Sidebar';
 import MainPage from './MainPage';
 import FavouritePage from './Fav.js';
@@ -25,14 +25,14 @@ function App() {
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
       <div className="MainContent">
-      <Router>
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/Favourites" element={<FavouritePage />} />
-          <Route path="/Categories" element={<CategoriesPage />} />
-          <Route path="/About" element={<AboutPage />} />
-          <Route path="/AboutMovie" element={<AboutMoviePage />} />
-        </Routes>
+        <Router>
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/Favourites" element={<FavouritePage />} />
+            <Route path="/Categories" element={<CategoriesPage />} />
+            <Route path="/About" element={<AboutPage />} />
+            <Route path="/AboutMovie" element={<AboutMoviePage />} />
+          </Routes>
         </Router>
       </div>
     </div>
