@@ -1,0 +1,8 @@
+p {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    max-width: 90%; /* Limits width */
+  }
+.TopGap {
+    padding-top: 5%;
+    padding-left: 2%;
+}

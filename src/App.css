@@ -1,4 +1,7 @@
-
+.TopGap {
+  padding-top: 5%;
+  padding-left: 2%;
+}
 h1 {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
   max-width: 90%; /* Limits width */
@@ -10,13 +13,6 @@ h2 {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
   max-width: 90%; /* Limits width */
   overflow: hidden;
-  white-space: nowrap; /* Keeps it on one line */
-}
-p {
-  font-size: clamp(1.5rem, 5vw, 2.5rem);
-  max-width: 90%; /* Limits width */
-  overflow: hidden;
-  text-overflow: ellipsis; /* Adds "..." if too long */
   white-space: nowrap; /* Keeps it on one line */
 }
 .App-header {

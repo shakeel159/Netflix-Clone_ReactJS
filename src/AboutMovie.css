@@ -1,8 +1,5 @@
 
-.AboutPge {
-    padding-top: 5%;
-    padding-left: 2%;
-}
+
 .description_About {
     white-space: normal;  /* Allow text to wrap */
     word-wrap: break-word; /* Allow long words to break if needed */
@@ -12,4 +9,8 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
+}
+
+.LikeBTN:hover {
+    cursor: pointer;
 }

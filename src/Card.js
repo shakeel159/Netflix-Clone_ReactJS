@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import AboutMovie from './AboutMovie.js';
 
 function Card({ img, title, description, movieData, fullDescription = false }) {
+  const safeDescription = description ? description : "No description available";
   return (
     <div className="Box">
       <div className="Card">

@@ -3,11 +3,23 @@ import { WhereToWatch } from "./APICalls";
 import './AboutMovie.css';
 import { useEffect, useState } from "react";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+
+
+
 function AboutMoviePage(){
     const location = useLocation();
     const movie = location.state?.movie;
+    const [likedMovies, setLikedMovies] = useState([]);
 
     const [providers, setProviders] = useState([]);
+
+    useEffect(() => {
+        // Retrieve liked movies from localStorage if available
+        const storedLikedMovies = JSON.parse(localStorage.getItem('likedMovies')) || [];
+        setLikedMovies(storedLikedMovies);
+    }, []);
 
     useEffect(() => {
         const fetchProviders = async () =>{
@@ -38,15 +50,36 @@ function AboutMoviePage(){
         fetchProviders();
     }, [movie]);
 
+    const handleLike = () => {
+        setLikedMovies(prevLikedMovies => {
+            const isLiked = prevLikedMovies.some(likedMovie => likedMovie.id === movie.id);
+            let updatedLikedMovies;
+            if(isLiked) {
+                //if already liked remove from list
+                updatedLikedMovies = prevLikedMovies.filter(likedMovie => likedMovie.id !== movie.id);
+            }
+            else {
+                // Otherwise, add to the list
+                updatedLikedMovies = [...prevLikedMovies, movie];
+            }
+            // Save to localStorage
+            localStorage.setItem('likedMovies', JSON.stringify(updatedLikedMovies));
+            return updatedLikedMovies;
+        });
+    };
+
     if(!movie) {
         return <p>No movie data found.</p>
     }
 
     return (
         <div>
-            <div className="AboutPge">
+            <div className="TopGap">
                 <h1>{movie.title}</h1>
                 <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}></img>
+                <div>
+                    <FontAwesomeIcon icon={faThumbsUp} size="2x" className="LikeBTN" onClick={handleLike}/>
+                </div>
                 <h3>where to watch:</h3>
                 {providers.length > 0 ? (
                     <ul>

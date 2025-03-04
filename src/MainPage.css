@@ -19,6 +19,13 @@
     width:100%;
     height: auto;
 }
+p {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    max-width: 90%; /* Limits width */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds "..." if too long */
+    white-space: nowrap; /* Keeps it on one line */
+  }
 .Page{
     display: flex;
     flex-wrap: wrap;
