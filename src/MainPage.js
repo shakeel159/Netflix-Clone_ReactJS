@@ -22,6 +22,8 @@ function MainPage(){
     const [comedyMovies, setComedyMovies] = useState([]);
     const [upcomingMovies, setComingMovies] = useState([]);
 
+    const [fade, setFade] = useState(false);
+
     useEffect(() => {
         const fetchMovies = async () => {
             try {
@@ -30,8 +32,27 @@ function MainPage(){
                 setActionMovies(await fetchActionMovies());
                 setComedyMovies(await fetchComedyMovies());
                 setComingMovies(await fetchUpcomingMovies());
-                const bannerData = await getRandomMovieImage();
-                setBanner(bannerData);
+
+                const updateBanner = async() => {
+                    setFade(false);
+                    await new Promise(res => setTimeout(res, 500));
+
+                    const bannerData = await getRandomMovieImage();
+                    if (bannerData && bannerData.imageUrl.length > 0) {
+                        setBanner({
+                            ...bannerData,
+                            imageUrl: bannerData.imageUrl[Math.floor(Math.random() * bannerData.imageUrl.length)]
+                        });
+                        setFade(true);
+                    }
+                };
+                await updateBanner();
+
+                // Set an interval to update the banner every 10 seconds
+                const bannerTimer = setInterval(updateBanner, 10000);
+    
+                return () => clearInterval(bannerTimer); // Cleanup on unmoun
+                
             }
             catch (error){
                 console.log("Error fetching movies", error);
@@ -52,7 +73,9 @@ function MainPage(){
                         key={movie.id} 
                         img={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                         title={movie.title}
-                        description={movie.overview}>
+                        description={movie.overview}
+                        movieData={movie}
+                        fullDescription={false}>
                         </Card>
                     ))
                 ): (
@@ -69,7 +92,8 @@ function MainPage(){
             <header className="App-header">
                 {banner ? (
                     <>
-                        <img className="banner-img" src={banner.imageUrl} alt={banner.title} />
+                        <img className={`banner-img ${fade ? "fade-in" : "fade-out"}`} 
+                         src={banner.imageUrl} alt={banner.title}/>
                         <div className="Banner-Title">
                             <h2>{banner.title}</h2>
                             <h3>{banner.categories}</h3>

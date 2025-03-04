@@ -38,7 +38,20 @@ p {
   position: absolute;
   background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
+.banner-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
 
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
 
 .SidebarOverlay {
   position: fixed;

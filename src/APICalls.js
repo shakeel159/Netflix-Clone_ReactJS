@@ -84,7 +84,7 @@ export const getRandomMovieImage = async () =>  {
               title: randomMovie.title,
               categories: movieDetails.data.genres.map(g => g.name).join(", "),
               description: randomMovie.overview,
-              imageUrl: `https://image.tmdb.org/t/p/original${backdrops[Math.floor(Math.random() * backdrops.length)].file_path}`
+              imageUrl: backdrops.map(img => `https://image.tmdb.org/t/p/original${img.file_path}`)
           };
       } else {
           return null;
@@ -93,4 +93,18 @@ export const getRandomMovieImage = async () =>  {
       console.error("Error fetching random movie image:", error);
       return null;
   }
-}
+};
+
+export const WhereToWatch = async (movie_id) => {
+  try {
+    const response = await fetch(`${API_URL}/movie/${movie_id}/watch/providers?api_key=${API_KEY}`);
+    if(!response.ok) throw new Error('Failed to fetch providers');
+    const data = await response.json();
+    return data.results;
+  }
+  catch(error){
+    console.error('cant find information:', error);
+    return [];
+  }
+
+};
