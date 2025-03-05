@@ -1,5 +1,5 @@
 import React, { useState, useEffect  } from "react";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Sidebar from './Sidebar';
 import MainPage from './MainPage';
 import FavouritePage from './Fav.js';
@@ -27,6 +27,7 @@ function App() {
       <div className="MainContent">
           <Routes>
             <Route path="/" element={<MainPage />} />
+            <Route path="/Netflix-Clone_ReactJS" element={<MainPage />} />
             <Route path="/Favourites" element={<FavouritePage />} />
             <Route path="/Categories" element={<CategoriesPage />} />
             <Route path="/About" element={<AboutPage />} />

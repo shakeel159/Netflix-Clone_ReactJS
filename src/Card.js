@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import AboutMovie from './AboutMovie.js';
+import './Card.css';
 
 function Card({ img, title, description, movieData, fullDescription = false }) {
   const safeDescription = description ? description : "No description available";

@@ -65,25 +65,25 @@ function MainPage(){
     const MovieRow = ({title, movies}) => {
         return (
             <div className="MovieRow">
-            <h1>{title}</h1>
-            <div className="column"> 
-                {movies.length > 0 ? (
-                    movies.map(movie => (
-                        <Card 
-                        key={movie.id} 
-                        img={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                        title={movie.title}
-                        description={movie.overview}
-                        movieData={movie}
-                        fullDescription={false}>
-                        </Card>
-                    ))
-                ): (
-                    <p>Loading...</p>
-                )}
-            </div>
+                <h1>{title}</h1>
+                <div className="column"> 
+                    {movies.length > 0 ? (
+                        movies.map(movie => (
+                            <Card 
+                            key={movie.id} 
+                            img={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                            title={movie.title}
+                            description={movie.overview}
+                            movieData={movie}
+                            fullDescription={false}>
+                            </Card>
+                        ))
+                    ): (
+                        <p>Loading...</p>
+                    )}
+                </div>
 
-        </div>
+            </div>
         )
     }
 

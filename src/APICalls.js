@@ -38,6 +38,29 @@ export const fetchActionMovies = async () => {
       return [];
   }
 };
+export const fetchMoviesByCategory = async (category, page = 1) => {
+  const genreMap = {
+    Action: 28,
+    Adventure: 12,
+    Comedy: 35,
+    Documentary: 99
+};
+const genreId = genreMap[category];
+
+if(!genreId) {
+  console.error(`Invalid category: ${category}`);
+  return[];
+}
+  try {
+      const response = await fetch(`${API_URL}/discover/movie?api_key=${API_KEY}&language=en-US&with_genres=${genreId}&page=${page}`);
+      if (!response.ok) throw new Error('Failed to fetch action movies');
+      const data = await response.json();
+      return data.results;
+  } catch (error) {
+      console.error(`Error fetching ${category} movies:`, error);
+      return [];
+  }
+};
 export const fetchComedyMovies = async () => {
   try {
       const response = await fetch(`${API_URL}/discover/movie?api_key=${API_KEY}&language=en-US&with_genres=35&page=1`);
